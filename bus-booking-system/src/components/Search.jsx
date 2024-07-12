@@ -50,7 +50,7 @@ const SearchBar = () => {
       sx={{
         position: 'absolute',
         bottom: '20px',
-        left: '55%',
+        left: '50%',
         transform: 'translateX(-50%)',
         width: '80%',
         maxWidth: '1000px',
