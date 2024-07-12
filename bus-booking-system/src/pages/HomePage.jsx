@@ -5,10 +5,13 @@ import SearchBar from '../components/Search';
 import img from '../assets/img.png';
 import imgc from '../assets/imgc.png';
 import propic from '../assets/propic.png';
+import Footer from '../components/Footer';
 const HomePage = () => {
   return (
     <>
+     <Box sx={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
       <Header />
+       
       <Box sx={{ bgcolor: '#fefefe', pt: 8 }}>
       <Container maxWidth="lg">
           <Box sx={{ mt: 4, textAlign: 'center', position: 'relative' }}>
@@ -377,12 +380,26 @@ const HomePage = () => {
            
            <Rating name="read-only" value={4} readOnly />
          </Box>
+
+         
               </Box>
      
-   
+            
         </Container>
+        <Box sx={{ mt: 4, position: 'relative', display: 'flex', justifyContent: 'space-between' }}>
+     
+       </Box>
       </Box>
+     
+      
+     
+      </Box>
+      <Box sx={{top:'1800px', mt: 4, position: 'relative', display: 'flex', justifyContent: 'space-between' }}>
+      <Footer/>
+     </Box> 
     </>
+  
+     
   );
 };
 
