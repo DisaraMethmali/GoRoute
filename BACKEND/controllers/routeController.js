@@ -21,3 +21,23 @@ exports.getRoutes = async (req, res) => {
     res.status(500).json({ error: 'Server error' });
   }
 };
+
+
+exports.searchRoutes = async (req, res) => {
+  const { from, to } = req.body;
+
+  try {
+    const routes = await Route.find({
+      $or: [
+        { startPoint: from, destination: to },
+        { startPoint: from, halts: to },
+        { halts: from, destination: to },
+        { halts: from, halts: to }
+      ]
+    });
+
+    res.json(routes);
+  } catch (error) {
+    res.status(500).json({ error: 'Server error' });
+  }
+};

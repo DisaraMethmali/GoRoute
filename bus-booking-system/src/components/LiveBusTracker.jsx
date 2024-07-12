@@ -4,7 +4,7 @@ import { io } from 'socket.io-client';
 import 'leaflet/dist/leaflet.css';
 
 // Replace with your WebSocket server URL
-const socket = io('http://localhost:8060');
+const socket = io('http://localhost:5000');
 
 const LiveBusTracker = ({ busId }) => {
   const [busLocation, setBusLocation] = useState(null);

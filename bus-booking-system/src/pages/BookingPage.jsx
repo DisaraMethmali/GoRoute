@@ -9,6 +9,7 @@ import Footer from '../components/Footer';
 function BookingPage() {
   const [availableBuses, setAvailableBuses] = useState([]);
   const [busId, setBusId] = useState(null);
+  const MapbusId = 'example-bus-id'
 
   useEffect(() => {
     // Fetch all bus routes on initial load
@@ -24,8 +25,10 @@ function BookingPage() {
   }, []);
 
   const handleSearch = async (searchParams) => {
+    console.log(searchParams)
     try {
       const response = await axios.post('http://localhost:5000/api/routes/search', searchParams);
+      console.log(response.data)
       setAvailableBuses(response.data);
     } catch (error) {
       console.error('Error fetching buses:', error);
@@ -36,12 +39,12 @@ function BookingPage() {
     <>
       <Header />
       <div>
-        <BookingForm onSearch={handleSearch} />
+        <BookingForm onSearch={handleSearch} /> 
         {availableBuses.map((bus) => (
           <AvailableBus key={bus._id} bus={bus} />
         ))}
-        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', backgroundColor: '#00000041' }}>
-          {busId ? (<LiveBusTracker busId={busId} />) : <h4>Select a Bus</h4>}
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
+          {MapbusId ? (<LiveBusTracker busId={MapbusId} />) : <h4>Select a Bus</h4>}
         </div>
       </div>
       <Footer />
