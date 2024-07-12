@@ -24,11 +24,8 @@
     "react-dom": "^18.3.1",
     "react-leaflet": "^4.2.1",
     "react-router-dom": "^6.24.1",
-    "socket.io-client": "^4.7.5"
+    "socket.io-client": "^4.7.5",
     "date-fns": "^3.6.0",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "react-router-dom": "^6.24.1",
     "react-time-picker": "^7.0.0"
   },
   "devDependencies": {
