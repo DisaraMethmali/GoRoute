@@ -7,12 +7,12 @@ import AcUnitIcon from '@mui/icons-material/AcUnit';
 import PowerIcon from '@mui/icons-material/Power';
 import StopCircleIcon from '@mui/icons-material/StopCircle';
 
-function AvailableBus() {
+function AvailableBus({ bus }) {
   return (
     <Card sx={{ maxWidth: 700, margin: '20px auto', padding: '16px' }}>
       <CardContent>
         <Typography variant="h5" gutterBottom>
-          A/C Sleeper (2+1)
+          {bus.features.ac ? 'A/C' : 'Non A/C'} Bus
         </Typography>
         <Divider sx={{ margin: '8px 0' }} />
         <Grid container spacing={1} alignItems="center">
@@ -21,7 +21,7 @@ function AvailableBus() {
               Departure Time
             </Typography>
             <Typography variant="body1">
-              08:30 PM
+              {bus.departureTime}
             </Typography>
           </Grid>
           <Grid item xs={6}>
@@ -29,14 +29,14 @@ function AvailableBus() {
               Journey Time
             </Typography>
             <Typography variant="body1">
-              07:45 Hrs
+              {bus.journeyTime}
             </Typography>
           </Grid>
         </Grid>
         <Box sx={{ display: 'flex', justifyContent: 'space-between', marginY: 2 }}>
-          <AcUnitIcon />|
-          <WifiIcon />|
-          <PowerIcon />|
+          {bus.features.ac && <AcUnitIcon />}
+          {bus.features.wifi && <WifiIcon />}
+          {bus.features.phoneCharger && <PowerIcon />}
           <Box display="flex" alignItems="center">
             <StopCircleIcon />
             <Typography variant="body2" sx={{ marginLeft: '4px' }}>1 Rest Stop</Typography>
@@ -54,9 +54,9 @@ function AvailableBus() {
         <Divider />
         <Box sx={{ marginY: 2 }}>
           <Typography variant="body1" align="center">
-            Banglore
+            {bus.startPoint}
             <Box component="span" sx={{ display: 'inline-block', marginX: 2 }}>➔</Box>
-            Chennai
+            {bus.destination}
           </Typography>
         </Box>
         <Box display="flex" justifyContent="space-between">

@@ -4,10 +4,11 @@ import HomePage from './pages/HomePage';
 import Login from './pages/Login';
 
 import CssBaseline from '@mui/material/CssBaseline';
-
+import AboutPage from './pages/About';
 import createTheme from "@mui/material/styles/createTheme";
 import BookingPage from './pages/BookingPage';
 import BusOwnerInterface from './pages/busOwner/BusOwnerInterface';
+import ServicePage from './pages/ServicePage';
 const theme = createTheme();
 
 function App() {
@@ -16,6 +17,8 @@ function App() {
       <CssBaseline />
       <Routes>
         <Route exact path="/" element={<HomePage/>} />
+        <Route exact path="/about" element={<AboutPage/>} />
+        <Route exact path="/service" element={<ServicePage/>} />
         <Route exact path="/book" element={<BookingPage/>} />
         <Route exact path="/busOwner/*" element={<BusOwnerInterface/>} />
         <Route exact path="/login" element={<Login/>} />
