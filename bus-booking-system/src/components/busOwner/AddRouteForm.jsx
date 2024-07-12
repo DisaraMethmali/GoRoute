@@ -36,10 +36,39 @@ const AddRouteForm = () => {
     setFeatures({ ...features, [event.target.name]: event.target.checked });
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
     const journeyTimeFormatted = `${journeyTime.hours}:${journeyTime.minutes}`;
-    console.log('Route Added:', { routeNumber, startPoint, destination, departureTime, journeyTime: journeyTimeFormatted, halts, features });
+
+    const routeData = {
+      routeNumber,
+      startPoint,
+      destination,
+      departureTime,
+      journeyTime: journeyTimeFormatted,
+      halts,
+      features,
+    };
+
+    try {
+      const response = await fetch('http://localhost:5000/api/routes/add', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(routeData),
+      });
+
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+
+      const data = await response.json();
+      console.log('Route Added:', data);
+      // Optionally reset the form here
+    } catch (error) {
+      console.error('Error:', error);
+    }
   };
 
   return (
