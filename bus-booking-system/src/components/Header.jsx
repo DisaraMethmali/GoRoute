@@ -52,7 +52,7 @@ const Header = () => {
                 to="/book"
                 sx={{ textDecoration: 'none', color: 'black', mx: 2, fontSize: 16, fontFamily: 'Poppins' }}
               >
-                Book a trip
+                Search trip
               </Typography>
             </Box>
             <Box display="flex" alignItems="center">

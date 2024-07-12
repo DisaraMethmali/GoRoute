@@ -34,19 +34,11 @@ const HeaderBusOwner = () => {
             <Box display="flex" alignItems="center">
               <Button
                 component={Link}
-                to="/login"
-                variant="contained"
-                sx={{ bgcolor: '#C6D9F6', color: 'text.primary', ml: 2, fontSize: 14, fontFamily: 'Poppins' }}
-              >
-                Login
-              </Button>
-              <Button
-                component={Link}
-                to="/signup"
+                to="/"
                 variant="contained"
                 sx={{ bgcolor: '#283646', color: 'white', ml: 2, fontSize: 14, fontFamily: 'Poppins' }}
               >
-                Sign Up
+                Log Out
               </Button>
             </Box>
           </Box>

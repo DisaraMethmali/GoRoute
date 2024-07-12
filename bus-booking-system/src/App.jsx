@@ -1,6 +1,8 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import HomePage from './pages/HomePage';
+import Login from './pages/Login';
+
 import CssBaseline from '@mui/material/CssBaseline';
 
 import createTheme from "@mui/material/styles/createTheme";
@@ -16,6 +18,7 @@ function App() {
         <Route exact path="/" element={<HomePage/>} />
         <Route exact path="/book" element={<BookingPage/>} />
         <Route exact path="/busOwner/*" element={<BusOwnerInterface/>} />
+        <Route exact path="/login" element={<Login/>} />
       </Routes>
     </Router>
   );
