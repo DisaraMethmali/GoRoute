@@ -10,11 +10,8 @@ const AddRouteForm = () => {
   const [departureTime, setDepartureTime] = useState('');
   const [journeyTime, setJourneyTime] = useState({ hours: '0', minutes: '0' });
   const [halts, setHalts] = useState(['']);
-  const [features, setFeatures] = useState({
-    ac: false,
-    wifi: false,
-    phoneCharger: false,
-  });
+  const [features, setFeatures] = useState({ ac: false, wifi: false, phoneCharger: false });
+  const [success, setSuccess] = useState(null);
 
   const handleHaltChange = (index, value) => {
     const newHalts = [...halts];
@@ -65,9 +62,24 @@ const AddRouteForm = () => {
 
       const data = await response.json();
       console.log('Route Added:', data);
-      // Optionally reset the form here
+      setSuccess('Route added successfully!');
+
+      // Clear form fields
+      setRouteNumber('');
+      setStartPoint('');
+      setDestination('');
+      setDepartureTime('');
+      setJourneyTime({ hours: '0', minutes: '0' });
+      setHalts(['']);
+      setFeatures({ ac: false, wifi: false, phoneCharger: false });
+
+      // Clear success message after 5 seconds
+      setTimeout(() => {
+        setSuccess(null);
+      }, 5000);
     } catch (error) {
       console.error('Error:', error);
+      setSuccess(null);
     }
   };
 
@@ -78,6 +90,7 @@ const AddRouteForm = () => {
           <Typography variant="h4" component="h1" gutterBottom align="center" sx={{ color: '#1976d2' }}>
             Add a New Route
           </Typography>
+          {success && <Typography variant="h6" color="green" align="center">{success}</Typography>}
           <form onSubmit={handleSubmit}>
             <Grid container spacing={3}>
               <Grid item xs={12}>
