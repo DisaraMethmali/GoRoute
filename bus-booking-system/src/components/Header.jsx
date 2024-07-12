@@ -33,7 +33,7 @@ const Header = () => {
               <Typography
                 variant="h6"
                 component={Link}
-                to="/services"
+                to="/service"
                 sx={{ textDecoration: 'none', color: 'black', mx: 2, fontSize: 16, fontFamily: 'Poppins' }}
               >
                 Services
