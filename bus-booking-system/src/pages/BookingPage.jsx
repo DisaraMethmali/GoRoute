@@ -9,7 +9,7 @@ import Footer from '../components/Footer';
 function BookingPage() {
   const [availableBuses, setAvailableBuses] = useState([]);
   const [busId, setBusId] = useState(null);
-  const [isBtnClicked, setIsBtnClicked] = useState(false);
+  const [isBtnClicked, setIsBtnClicked] = useState(true);
   const MapbusId = 'example-bus-id'
 
   useEffect(() => {
