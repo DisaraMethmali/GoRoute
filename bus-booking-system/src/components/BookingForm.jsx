@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { TextField, Button, Box, MenuItem, Grid, Paper, Typography } from '@mui/material';
 
 const BookingForm = ({ onSearch }) => {
-  const pickupPoints = ['Kansas', 'Dallas', 'colombo', 'Emi Davenport'];
-  const droppingPoints = ['Kansas', 'Dallas', 'peradeni', 'Emi Davenport'];
+  const pickupPoints = ['Kansas', 'Dallas', 'Colombo', 'Emi Davenport'];
+  const droppingPoints = ['Kansas', 'Dallas', 'Kandy', 'Emi Davenport'];
 
   const [from, setFrom] = useState('');
   const [to, setTo] = useState('');
