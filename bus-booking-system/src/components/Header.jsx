@@ -46,6 +46,14 @@ const Header = () => {
               >
                 Contact
               </Typography>
+              <Typography
+                variant="h6"
+                component={Link}
+                to="/book"
+                sx={{ textDecoration: 'none', color: 'black', mx: 2, fontSize: 16, fontFamily: 'Poppins' }}
+              >
+                Book a trip
+              </Typography>
             </Box>
             <Box display="flex" alignItems="center">
               <Button

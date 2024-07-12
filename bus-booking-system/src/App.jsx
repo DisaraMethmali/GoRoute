@@ -4,6 +4,7 @@ import HomePage from './pages/HomePage';
 import CssBaseline from '@mui/material/CssBaseline';
 
 import createTheme from "@mui/material/styles/createTheme";
+import BookingPage from './pages/BookingPage';
 const theme = createTheme();
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
       <CssBaseline />
       <Routes>
         <Route exact path="/" element={<HomePage/>} />
+        <Route exact path="/book" element={<BookingPage/>} />
       </Routes>
     </Router>
   );
