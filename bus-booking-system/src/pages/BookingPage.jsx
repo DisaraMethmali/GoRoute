@@ -9,6 +9,7 @@ import Footer from '../components/Footer';
 function BookingPage() {
   const [availableBuses, setAvailableBuses] = useState([]);
   const [busId, setBusId] = useState(null);
+  const [isBtnClicked, setIsBtnClicked] = useState(false);
 
   useEffect(() => {
     // Fetch all bus routes on initial load
@@ -27,19 +28,24 @@ function BookingPage() {
     try {
       const response = await axios.post('http://localhost:5000/api/routes/search', searchParams);
       setAvailableBuses(response.data);
+      setIsBtnClicked(true); // Set isBtnClicked to true after search
     } catch (error) {
       console.error('Error fetching buses:', error);
     }
   };
 
+  console.log("is button clicked", isBtnClicked);
+
   return (
     <>
       <Header />
       <div>
-        <BookingForm onSearch={handleSearch} />
-        {availableBuses.map((bus) => (
-          <AvailableBus key={bus._id} bus={bus} />
-        ))}
+        <BookingForm onSearch={handleSearch} setIsBtnClicked={setIsBtnClicked} />
+        {isBtnClicked && (
+          availableBuses.map((bus) => (
+            <AvailableBus key={bus._id} bus={bus} />
+          ))
+        )}
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', backgroundColor: '#00000041' }}>
           {busId ? (<LiveBusTracker busId={busId} />) : <h4>Select a Bus</h4>}
         </div>
