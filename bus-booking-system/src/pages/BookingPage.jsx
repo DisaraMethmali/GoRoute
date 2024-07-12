@@ -10,6 +10,7 @@ function BookingPage() {
   const [availableBuses, setAvailableBuses] = useState([]);
   const [busId, setBusId] = useState(null);
   const [isBtnClicked, setIsBtnClicked] = useState(false);
+  const MapbusId = 'example-bus-id'
 
   useEffect(() => {
     // Fetch all bus routes on initial load
@@ -25,8 +26,10 @@ function BookingPage() {
   }, []);
 
   const handleSearch = async (searchParams) => {
+    console.log(searchParams)
     try {
       const response = await axios.post('http://localhost:5000/api/routes/search', searchParams);
+      console.log(response.data)
       setAvailableBuses(response.data);
       setIsBtnClicked(true); // Set isBtnClicked to true after search
     } catch (error) {
@@ -46,8 +49,8 @@ function BookingPage() {
             <AvailableBus key={bus._id} bus={bus} />
           ))
         )}
-        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', backgroundColor: '#00000041' }}>
-          {busId ? (<LiveBusTracker busId={busId} />) : <h4>Select a Bus</h4>}
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
+          {MapbusId ? (<LiveBusTracker busId={MapbusId} />) : <h4>Select a Bus</h4>}
         </div>
       </div>
       <Footer />
