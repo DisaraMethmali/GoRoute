@@ -10,14 +10,15 @@ const HomePage = () => {
     <>
       <Header />
       <Box sx={{ bgcolor: '#fefefe', pt: 8 }}>
-        <Container maxWidth="lg">
+      <Container maxWidth="lg">
           <Box sx={{ mt: 4, textAlign: 'center', position: 'relative' }}>
             <Box
               component="img"
               src={img}
               alt="Descriptive Alt Text"
               sx={{
-                width: '1300px',
+                left:'-1px',
+                width: '1180px',
                 height: '678px',
                 borderRadius: '50px',
                 display: 'block',
@@ -64,13 +65,13 @@ const HomePage = () => {
               sx={{
                 position: 'absolute',
                 top: '60px',
-                right: '-90px',
+                right: '-20px',
               fontSize:'20px',
                 color: '#727272',
                 fontFamily: 'Poppins',
                 zIndex: 10, // Ensure text appears above the image
                 padding: '8px',
-                maxWidth: '600px',
+                maxWidth: '550px',
                 textAlign: 'justify',
                 
               }}
@@ -80,14 +81,14 @@ const HomePage = () => {
                  Lorem ipsum dolor sit amet consectetur.
                  Faucibus non aliquet felis egestas. Egestas arcu eu eros mauris faucibus condimentum ac in.
                  Lorem ipsum dolor sit amet consectetur.
-                 Faucibus non aliquet felis egestas. Egestas arcu eu eros mauris faucibus condimentum ac in.
+                 Faucibus non aliquet felis egestas. 
             </Typography>
             <Typography
               variant="body1"
               sx={{
                 position: 'absolute',
-                top: '300px',
-                right: '390px',
+                top: '270px',
+                right: '410px',
               fontSize:'22px',
                 color: '#727272',
                 fontFamily: 'Poppins',
@@ -110,7 +111,7 @@ const HomePage = () => {
                 display: 'block',
                 mx: 'auto',
                 position: 'absolute',
-                right: '-100px',
+                right: '0px',
                 top: '400px',
               }}
             />
@@ -142,7 +143,7 @@ const HomePage = () => {
                 fontFamily: 'Poppins',
                 zIndex: 10, // Ensure text appears above the image
                 padding: '8px',
-                maxWidth: '600px',
+                maxWidth: '550px',
                 textAlign: 'justify',
                 
               }}
@@ -152,13 +153,13 @@ const HomePage = () => {
                  Lorem ipsum dolor sit amet consectetur.
                  Faucibus non aliquet felis egestas. Egestas arcu eu eros mauris faucibus condimentum ac in.
                  Lorem ipsum dolor sit amet consectetur.
-                 Faucibus non aliquet felis egestas. Egestas arcu eu eros mauris faucibus condimentum ac in.
+                 Faucibus non aliquet felis egestas. 
             </Typography>
             <Typography
               variant="body1"
               sx={{
                 position: 'absolute',
-                top: '740px',
+                top: '710px',
                 left: '50px',
               fontSize:'22px',
                 color: '#727272',
@@ -208,13 +209,13 @@ const HomePage = () => {
               sx={{
                 position: 'absolute',
                 top: '890px',
-                right: '-90px',
+                right: '0px',
               fontSize:'20px',
                 color: '#727272',
                 fontFamily: 'Poppins',
                 zIndex: 10, // Ensure text appears above the image
                 padding: '8px',
-                maxWidth: '600px',
+                maxWidth: '550px',
                 textAlign: 'justify',
                 
               }}
@@ -224,14 +225,14 @@ const HomePage = () => {
                  Lorem ipsum dolor sit amet consectetur.
                  Faucibus non aliquet felis egestas. Egestas arcu eu eros mauris faucibus condimentum ac in.
                  Lorem ipsum dolor sit amet consectetur.
-                 Faucibus non aliquet felis egestas. Egestas arcu eu eros mauris faucibus condimentum ac in.
+                 Faucibus non aliquet felis egestas. 
             </Typography>
             <Typography
               variant="body1"
               sx={{
                 position: 'absolute',
-                top: '1130px',
-                right: '390px',
+                top: '1100px',
+                right: '430px',
               fontSize:'22px',
                 color: '#727272',
                 fontFamily: 'Poppins',
@@ -246,7 +247,7 @@ const HomePage = () => {
           </Box>
           <Typography variant="body1" sx={{ position: 'absolute',
                 top: '2050px',
-                left: '50px',
+                left: '130px',
               fontSize:'32px',
                 color: '#727272',
                 fontFamily: 'Poppins',
@@ -262,7 +263,7 @@ const HomePage = () => {
               alt="Profile Picture"
               sx={{
                 top:'2100px',
-                left: '240px',
+                left: '310px',
                 width: '178px',
                 height: '178px',
                 borderRadius: '50%',
@@ -283,7 +284,7 @@ const HomePage = () => {
                 position: 'absolute',
                 bottom: '0',
                 top:'2150px',
-                left: '80px',
+                left: '150px',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
